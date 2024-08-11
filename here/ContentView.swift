@@ -8,6 +8,58 @@
 import SwiftUI
 import SwiftData
 
+private func openFilePicker() -> URL? {
+    let dialog = NSOpenPanel()
+
+    dialog.title = "Choose a directory"
+    dialog.showsResizeIndicator = true
+    dialog.showsHiddenFiles = false
+    dialog.canChooseDirectories = false
+    dialog.canCreateDirectories = false
+    dialog.allowsMultipleSelection = false
+    dialog.canChooseFiles = true
+
+    if dialog.runModal() == NSApplication.ModalResponse.OK {
+        return dialog.url
+    } else {
+        // User clicked on "Cancel"
+        return nil
+    }
+}
+
+struct ItemView: View {
+    @ObservedObject var item: Item
+
+    var body: some View {
+        if let url = item.url {
+            HStack {
+                AsyncImage(url: url) { phase in
+                    switch phase {
+                    case .failure:
+                        Label(title: { Text("\(url.lastPathComponent)") }, icon: { Image(systemName: "doc") })
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 128, height: 128)
+                            .clipShape(.rect(cornerRadius: 25))
+                            .padding()
+                    default:
+                        ProgressView()
+                    }
+                }
+                .onDrag {
+                    item.dragCounter += 1
+                    return NSItemProvider(contentsOf: url) ?? NSItemProvider()
+                }
+                Text("\(item.dragCounter)")
+            }
+        } else {
+            Label("No file selected", systemImage: "doc")
+        }
+    }
+}
+
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
@@ -17,15 +69,24 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        VStack {
+                            Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                            ItemView(item: item)
+                            Button(action: {
+                                if let newLocation = openFilePicker() {
+                                    item.url = newLocation
+                                }
+                            }, label: { Text("Choose location...") })
+
+                        }
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        ItemView(item: item)
                     }
                 }
                 .onDelete(perform: deleteItems)
             }
 #if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
+            .navigationSplitViewColumnWidth(min: 600, ideal: 600)
 #endif
             .toolbar {
 #if os(iOS)

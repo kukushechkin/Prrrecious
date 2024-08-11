@@ -7,12 +7,17 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
-final class Item {
+final class Item: ObservableObject {
     var timestamp: Date
-    
-    init(timestamp: Date) {
+    var url: URL?
+    var dragCounter: Int
+
+    init(timestamp: Date, url: URL? = nil, dragCounter: Int = 0) {
         self.timestamp = timestamp
+        self.url = url
+        self.dragCounter = dragCounter
     }
 }
