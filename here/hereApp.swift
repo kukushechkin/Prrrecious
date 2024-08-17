@@ -40,7 +40,12 @@ struct hereApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(sharedModelContainer)
         }
-        .modelContainer(sharedModelContainer)
+        MenuBarExtra("here", systemImage: "square.and.arrow.up.circle") {
+            MenubarContentView()
+                .modelContainer(sharedModelContainer)
+        }
+        .menuBarExtraStyle(.window)
     }
 }

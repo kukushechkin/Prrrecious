@@ -8,91 +8,37 @@
 import SwiftData
 import SwiftUI
 
-private func askUserForFiles() -> [URL] {
-    let dialog = NSOpenPanel()
-
-    dialog.title = "Choose some files"
-    dialog.showsResizeIndicator = true
-    dialog.showsHiddenFiles = true
-    dialog.canChooseDirectories = false
-    dialog.canCreateDirectories = false
-    dialog.allowsMultipleSelection = true
-    dialog.canChooseFiles = true
-
-    if dialog.runModal() == NSApplication.ModalResponse.OK {
-        return dialog.urls
-    } else {
-        // User clicked on "Cancel"
-        return []
-    }
-}
-
-struct ItemView: View {
-    @ObservedObject var item: Item
-
-    var body: some View {
-        if let url = item.url {
-            HStack {
-                if let tn = item.thumbnail {
-                    Image(nsImage: tn)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .clipShape(.rect(cornerRadius: 25))
-                        .onDrag {
-                            item.dragCounter += 1
-                            return NSItemProvider(contentsOf: url) ?? NSItemProvider()
-                        }
-                } else {
-                    AsyncImage(url: url) { phase in
-                        switch phase {
-                        case .failure:
-                            Label(title: { Text("\(url.lastPathComponent)") }, icon: { Image(systemName: "doc") })
-                        case let .success(image):
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 128, height: 128)
-                                .clipShape(.rect(cornerRadius: 25))
-                        default:
-                            ProgressView()
-                        }
-                    }
-                    .onDrag {
-                        item.dragCounter += 1
-                        return NSItemProvider(contentsOf: url) ?? NSItemProvider()
-                    }
-                }
-                Text("\(item.dragCounter)")
-            }
-        } else {
-            Label("No file selected", systemImage: "doc")
-        }
-    }
-}
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @AppStorage("showCounters") private var showCounters = false
 
     var body: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 128))]) {
-            ForEach(items) { item in
-                VStack {
-                    ItemView(item: item)
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 128))]) {
+                ForEach(items) { item in
+                    VStack {
+                        ItemView(item: item, showCounter: showCounters)
+                    }
                 }
+                .onDelete(perform: deleteItems)
             }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+            .toolbar {
+                #if os(iOS)
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+                #endif
+                ToolbarItem {
+                    Button(action: addItems) {
+                        Label("Add Items", systemImage: "plus")
+                    }
                 }
-            #endif
-            ToolbarItem {
-                Button(action: addItems) {
-                    Label("Add Items", systemImage: "plus")
+                ToolbarItem {
+                    Button(action: toggleShowCounters) {
+                        Label("Toggle Counters", systemImage: showCounters ? "eye.slash" : "eye")
+                    }
                 }
             }
         }
@@ -119,6 +65,12 @@ struct ContentView: View {
             for index in offsets {
                 modelContext.delete(items[index])
             }
+        }
+    }
+
+    private func toggleShowCounters() {
+        withAnimation {
+            showCounters.toggle()
         }
     }
 }

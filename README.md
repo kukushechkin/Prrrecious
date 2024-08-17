@@ -1,8 +1,9 @@
 # TODO
 
-- [ ] menu bar
+- [X] menu bar
 - [X] preserve files access across restarts (secure bookmark)
 - [ ] icon
+- [ ] menubar icon
 - [X] bulk add files
 - [X] collection view
 - [ ] sort by: popularity, name, data added
@@ -11,6 +12,8 @@
 - [X] thumbnail
 - [ ] ~~recreate the thumbnail if the file has changed~~
 - [X] lazy load thumbnail
+- [X] show counts toggle
+- [ ] hide main app when running
 
 # Bugs
 
