@@ -5,8 +5,8 @@
 //  Created by Vladimir Kukushkin on 11.8.2024.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 private func askUserForFiles() -> [URL] {
     let dialog = NSOpenPanel()
@@ -33,23 +33,35 @@ struct ItemView: View {
     var body: some View {
         if let url = item.url {
             HStack {
-                AsyncImage(url: url) { phase in
-                    switch phase {
-                    case .failure:
-                        Label(title: { Text("\(url.lastPathComponent)") }, icon: { Image(systemName: "doc") })
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 128, height: 128)
-                            .clipShape(.rect(cornerRadius: 25))
-                    default:
-                        ProgressView()
+                if let tn = item.thumbnail {
+                    Image(nsImage: tn)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100)
+                        .clipShape(.rect(cornerRadius: 25))
+                        .onDrag {
+                            item.dragCounter += 1
+                            return NSItemProvider(contentsOf: url) ?? NSItemProvider()
+                        }
+                } else {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .failure:
+                            Label(title: { Text("\(url.lastPathComponent)") }, icon: { Image(systemName: "doc") })
+                        case let .success(image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 128, height: 128)
+                                .clipShape(.rect(cornerRadius: 25))
+                        default:
+                            ProgressView()
+                        }
                     }
-                }
-                .onDrag {
-                    item.dragCounter += 1
-                    return NSItemProvider(contentsOf: url) ?? NSItemProvider()
+                    .onDrag {
+                        item.dragCounter += 1
+                        return NSItemProvider(contentsOf: url) ?? NSItemProvider()
+                    }
                 }
                 Text("\(item.dragCounter)")
             }
@@ -73,11 +85,11 @@ struct ContentView: View {
             .onDelete(perform: deleteItems)
         }
         .toolbar {
-#if os(iOS)
-            ToolbarItem(placement: .navigationBarTrailing) {
-                EditButton()
-            }
-#endif
+            #if os(iOS)
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+            #endif
             ToolbarItem {
                 Button(action: addItems) {
                     Label("Add Items", systemImage: "plus")

@@ -16,6 +16,7 @@
 		B13AEF582C6941D600DA7A0A /* hereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AEF572C6941D600DA7A0A /* hereUITests.swift */; };
 		B13AEF5A2C6941D600DA7A0A /* hereUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13AEF592C6941D600DA7A0A /* hereUITestsLaunchTests.swift */; };
 		B13AEF672C694DFF00DA7A0A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B13AEF662C694DFF00DA7A0A /* README.md */; };
+		B160D0662C71410600DCA513 /* NSImage+thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160D0652C71410600DCA513 /* NSImage+thumbnail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B13AEF572C6941D600DA7A0A /* hereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hereUITests.swift; sourceTree = "<group>"; };
 		B13AEF592C6941D600DA7A0A /* hereUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hereUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B13AEF662C694DFF00DA7A0A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B160D0652C71410600DCA513 /* NSImage+thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+thumbnail.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B13AEF3F2C6941D500DA7A0A /* Assets.xcassets */,
 				B13AEF412C6941D500DA7A0A /* here.entitlements */,
 				B13AEF422C6941D500DA7A0A /* Preview Content */,
+				B160D0652C71410600DCA513 /* NSImage+thumbnail.swift */,
 			);
 			path = here;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B13AEF3C2C6941D400DA7A0A /* ContentView.swift in Sources */,
+				B160D0662C71410600DCA513 /* NSImage+thumbnail.swift in Sources */,
 				B13AEF3E2C6941D400DA7A0A /* Item.swift in Sources */,
 				B13AEF3A2C6941D400DA7A0A /* hereApp.swift in Sources */,
 			);

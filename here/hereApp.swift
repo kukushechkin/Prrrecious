@@ -5,23 +5,22 @@
 //  Created by Vladimir Kukushkin on 11.8.2024.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 @main
 struct hereApp: App {
-
     init() {
-        // Load all bookmarks from UserDefaults
-        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
-            if key.hasPrefix("bookmark_"), let data = value as? Data {
-                print("Key: \(key)")
-                var isStale = false
-                if let url = try? URL(resolvingBookmarkData: data, options: .withSecurityScope, bookmarkDataIsStale: &isStale) {
-                    let started = url.startAccessingSecurityScopedResource()
-                    print("Accessing \(url): \(started), is stale: \(isStale)")
-                }
-            }
+        try? loadBookmarks()
+    }
+
+    private func loadBookmarks() throws {
+        var isStale = false
+        for (_, url) in UserDefaults.standard.dictionaryRepresentation()
+            .filter({ $0.key.hasPrefix("bookmark_") })
+            .compactMapValues({ try? URL(resolvingBookmarkData: $0 as! Data, options: .withSecurityScope, bookmarkDataIsStale: &isStale) })
+        {
+            _ = url.startAccessingSecurityScopedResource()
         }
     }
 
@@ -45,4 +44,3 @@ struct hereApp: App {
         .modelContainer(sharedModelContainer)
     }
 }
-
