@@ -8,22 +8,22 @@
 import SwiftUI
 import SwiftData
 
-private func openFilePicker() -> URL? {
+private func askUserForFiles() -> [URL] {
     let dialog = NSOpenPanel()
 
-    dialog.title = "Choose a directory"
+    dialog.title = "Choose some files"
     dialog.showsResizeIndicator = true
-    dialog.showsHiddenFiles = false
+    dialog.showsHiddenFiles = true
     dialog.canChooseDirectories = false
     dialog.canCreateDirectories = false
-    dialog.allowsMultipleSelection = false
+    dialog.allowsMultipleSelection = true
     dialog.canChooseFiles = true
 
     if dialog.runModal() == NSApplication.ModalResponse.OK {
-        return dialog.url
+        return dialog.urls
     } else {
         // User clicked on "Cancel"
-        return nil
+        return []
     }
 }
 
@@ -43,7 +43,6 @@ struct ItemView: View {
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 128, height: 128)
                             .clipShape(.rect(cornerRadius: 25))
-                            .padding()
                     default:
                         ProgressView()
                     }
@@ -65,50 +64,34 @@ struct ContentView: View {
     @Query private var items: [Item]
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        VStack {
-                            Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                            ItemView(item: item)
-                            Button(action: {
-                                if let newLocation = openFilePicker() {
-                                    item.url = newLocation
-                                }
-                            }, label: { Text("Choose location...") })
-
-                        }
-                    } label: {
-                        ItemView(item: item)
-                    }
+        LazyVGrid(columns: [GridItem(.adaptive(minimum: 128))]) {
+            ForEach(items) { item in
+                VStack {
+                    ItemView(item: item)
                 }
-                .onDelete(perform: deleteItems)
             }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 600, ideal: 600)
-#endif
-            .toolbar {
+            .onDelete(perform: deleteItems)
+        }
+        .toolbar {
 #if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
+            }
 #endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+            ToolbarItem {
+                Button(action: addItems) {
+                    Label("Add Items", systemImage: "plus")
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
 
-    private func addItem() {
+    private func addItems() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            for location in askUserForFiles() {
+                 let newItem = Item(timestamp: Date(), url: location)
+                 modelContext.insert(newItem)
+            }
         }
     }
 
