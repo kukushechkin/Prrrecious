@@ -89,8 +89,15 @@ struct ContentView: View {
     private func addItems() {
         withAnimation {
             for location in askUserForFiles() {
-                 let newItem = Item(timestamp: Date(), url: location)
-                 modelContext.insert(newItem)
+                let startedUsing = location.startAccessingSecurityScopedResource()
+                let bookmarkData = try? location.bookmarkData(options: .securityScopeAllowOnlyReadAccess, includingResourceValuesForKeys: nil, relativeTo: nil)
+                print("Bookmark data for \(location): \(String(describing: bookmarkData)), started using: \(startedUsing)")
+                if let bookmarkData = bookmarkData {
+                    UserDefaults.standard.set(bookmarkData, forKey: "bookmark_\(location.path)")
+                }
+
+                let newItem = Item(timestamp: Date(), url: location)
+                modelContext.insert(newItem)
             }
         }
     }
