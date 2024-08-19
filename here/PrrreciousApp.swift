@@ -1,5 +1,5 @@
 //
-//  hereApp.swift
+//  PrrreciousApp.swift
 //  here
 //
 //  Created by Vladimir Kukushkin on 11.8.2024.
@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 @main
-struct hereApp: App {
+struct PrrreciousApp: App {
     init() {
         try? loadBookmarks()
     }
@@ -42,10 +42,10 @@ struct hereApp: App {
             ContentView()
                 .modelContainer(sharedModelContainer)
         }
-        MenuBarExtra("here", systemImage: "square.and.arrow.up.circle") {
-            MenubarContentView()
-                .modelContainer(sharedModelContainer)
-        }
-        .menuBarExtraStyle(.window)
+//        MenuBarExtra("Prrrecious", systemImage: "diamond.circle") {
+//            MenubarContentView()
+//                .modelContainer(sharedModelContainer)
+//        }
+//        .menuBarExtraStyle(.window)
     }
 }

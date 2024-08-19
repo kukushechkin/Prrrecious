@@ -14,6 +14,7 @@
 - [X] lazy load thumbnail
 - [X] show counts toggle
 - [ ] hide main app when running
+- [ ] settings to hide menubar when running
 
 # Bugs
 

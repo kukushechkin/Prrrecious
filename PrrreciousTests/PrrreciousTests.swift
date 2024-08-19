@@ -1,6 +1,6 @@
 //
-//  hereTests.swift
-//  hereTests
+//  PrrreciousTests.swift
+//  PrrreciousTests
 //
 //  Created by Vladimir Kukushkin on 11.8.2024.
 //

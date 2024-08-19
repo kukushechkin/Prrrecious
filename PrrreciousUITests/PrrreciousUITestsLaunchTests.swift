@@ -1,6 +1,6 @@
 //
-//  hereUITestsLaunchTests.swift
-//  hereUITests
+//  PrrreciousUITestsLaunchTests.swift
+//  PrrreciousUITests
 //
 //  Created by Vladimir Kukushkin on 11.8.2024.
 //
