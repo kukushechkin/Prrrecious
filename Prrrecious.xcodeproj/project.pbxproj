@@ -110,13 +110,10 @@
 		B13AEF382C6941D400DA7A0A /* Prrrecious */ = {
 			isa = PBXGroup;
 			children = (
+				B1D1896C2C77C66C0017DE62 /* Item */,
+				B1D1896B2C77C65E0017DE62 /* Menubar */,
 				B13AEF392C6941D400DA7A0A /* PrrreciousApp.swift */,
 				B13AEF3B2C6941D400DA7A0A /* ContentView.swift */,
-				B160D0672C714CE700DCA513 /* MenubarContentView.swift */,
-				B160D06B2C714D7A00DCA513 /* ItemView.swift */,
-				B160D06D2C714FDE00DCA513 /* MenubarItemView.swift */,
-				B13AEF3D2C6941D400DA7A0A /* Item.swift */,
-				B160D0652C71410600DCA513 /* NSImage+thumbnail.swift */,
 				B160D0692C714D3900DCA513 /* OpenFile.swift */,
 				B13AEF3F2C6941D500DA7A0A /* Assets.xcassets */,
 				B13AEF412C6941D500DA7A0A /* Prrrecious.entitlements */,
@@ -148,6 +145,25 @@
 				B13AEF592C6941D600DA7A0A /* PrrreciousUITestsLaunchTests.swift */,
 			);
 			path = PrrreciousUITests;
+			sourceTree = "<group>";
+		};
+		B1D1896B2C77C65E0017DE62 /* Menubar */ = {
+			isa = PBXGroup;
+			children = (
+				B160D0672C714CE700DCA513 /* MenubarContentView.swift */,
+				B160D06D2C714FDE00DCA513 /* MenubarItemView.swift */,
+			);
+			path = Menubar;
+			sourceTree = "<group>";
+		};
+		B1D1896C2C77C66C0017DE62 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				B160D06B2C714D7A00DCA513 /* ItemView.swift */,
+				B13AEF3D2C6941D400DA7A0A /* Item.swift */,
+				B160D0652C71410600DCA513 /* NSImage+thumbnail.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,7 +599,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = here;
+				TEST_TARGET_NAME = Prrrecious;
 			};
 			name = Debug;
 		};
@@ -605,7 +621,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = here;
+				TEST_TARGET_NAME = Prrrecious;
 			};
 			name = Release;
 		};

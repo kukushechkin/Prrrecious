@@ -78,5 +78,17 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Item.self, inMemory: true) {
+            switch $0 {
+            case .success(let container):
+                [
+                    Item(timestamp: Date(), url: nil, dragCounter: 0),
+                    Item(timestamp: Date(), url: nil, dragCounter: 0),
+                    Item(timestamp: Date(), url: nil, dragCounter: 0),
+                ].forEach { container.mainContext.insert($0) }
+            case .failure(let error):
+                print("Error creating model container: \(error)")
+            }
+        }
+
 }
