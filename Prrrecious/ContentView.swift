@@ -60,7 +60,12 @@ struct ContentView: View {
                     print("Item already exists: \(location)")
                     continue
                 }
-                
+
+                // Check if free limit of files reached
+                if items.count >= maxFreeFiles && !IAPManager.shared.isPurchased(productID: manyFilesProductID) {
+                    IAPManager.shared.purchaseProduct()
+                }
+
                 let newItem = Item(timestamp: Date(), url: location)
                 modelContext.insert(newItem)
             }

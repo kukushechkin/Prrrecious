@@ -21,6 +21,7 @@
 		B160D06A2C714D3900DCA513 /* OpenFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160D0692C714D3900DCA513 /* OpenFile.swift */; };
 		B160D06C2C714D7A00DCA513 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160D06B2C714D7A00DCA513 /* ItemView.swift */; };
 		B160D06E2C714FDE00DCA513 /* MenubarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160D06D2C714FDE00DCA513 /* MenubarItemView.swift */; };
+		B1D189722C77D1980017DE62 /* IAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D189712C77D1980017DE62 /* IAP.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		B160D0692C714D3900DCA513 /* OpenFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFile.swift; sourceTree = "<group>"; };
 		B160D06B2C714D7A00DCA513 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		B160D06D2C714FDE00DCA513 /* MenubarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarItemView.swift; sourceTree = "<group>"; };
+		B1D189712C77D1980017DE62 /* IAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAP.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				B1D1896C2C77C66C0017DE62 /* Item */,
 				B1D1896B2C77C65E0017DE62 /* Menubar */,
+				B1D189712C77D1980017DE62 /* IAP.swift */,
 				B13AEF392C6941D400DA7A0A /* PrrreciousApp.swift */,
 				B13AEF3B2C6941D400DA7A0A /* ContentView.swift */,
 				B160D0692C714D3900DCA513 /* OpenFile.swift */,
@@ -301,6 +304,7 @@
 				B160D06A2C714D3900DCA513 /* OpenFile.swift in Sources */,
 				B160D0662C71410600DCA513 /* NSImage+thumbnail.swift in Sources */,
 				B13AEF3E2C6941D400DA7A0A /* Item.swift in Sources */,
+				B1D189722C77D1980017DE62 /* IAP.swift in Sources */,
 				B160D06E2C714FDE00DCA513 /* MenubarItemView.swift in Sources */,
 				B160D06C2C714D7A00DCA513 /* ItemView.swift in Sources */,
 				B160D0682C714CE700DCA513 /* MenubarContentView.swift in Sources */,
