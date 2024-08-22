@@ -24,19 +24,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B13AEF4A2C6941D600DA7A0A /* PBXContainerItemProxy */ = {
+		B1D1896D2C77CCB70017DE62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B13AEF2E2C6941D400DA7A0A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B13AEF352C6941D400DA7A0A;
-			remoteInfo = here;
+			remoteInfo = Prrrecious;
 		};
-		B13AEF542C6941D600DA7A0A /* PBXContainerItemProxy */ = {
+		B1D1896F2C77CCD30017DE62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B13AEF2E2C6941D400DA7A0A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B13AEF352C6941D400DA7A0A;
-			remoteInfo = here;
+			remoteInfo = Prrrecious;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -197,7 +197,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B13AEF4B2C6941D600DA7A0A /* PBXTargetDependency */,
+				B1D1896E2C77CCB70017DE62 /* PBXTargetDependency */,
 			);
 			name = PrrreciousTests;
 			productName = hereTests;
@@ -215,7 +215,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B13AEF552C6941D600DA7A0A /* PBXTargetDependency */,
+				B1D189702C77CCD30017DE62 /* PBXTargetDependency */,
 			);
 			name = PrrreciousUITests;
 			productName = hereUITests;
@@ -328,15 +328,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B13AEF4B2C6941D600DA7A0A /* PBXTargetDependency */ = {
+		B1D1896E2C77CCB70017DE62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B13AEF352C6941D400DA7A0A /* Prrrecious */;
-			targetProxy = B13AEF4A2C6941D600DA7A0A /* PBXContainerItemProxy */;
+			targetProxy = B1D1896D2C77CCB70017DE62 /* PBXContainerItemProxy */;
 		};
-		B13AEF552C6941D600DA7A0A /* PBXTargetDependency */ = {
+		B1D189702C77CCD30017DE62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B13AEF352C6941D400DA7A0A /* Prrrecious */;
-			targetProxy = B13AEF542C6941D600DA7A0A /* PBXContainerItemProxy */;
+			targetProxy = B1D1896F2C77CCD30017DE62 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -540,6 +540,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AC5986BBE6;
@@ -563,6 +564,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AC5986BBE6;
