@@ -1,5 +1,6 @@
 # TODO
 
+- [ ] add IAP for more than 5 files
 - [ ] cloud view
 - [X] menu bar
 - [X] show menu bar on a UserDefault value
