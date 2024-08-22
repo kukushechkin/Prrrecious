@@ -55,6 +55,12 @@ struct ContentView: View {
                     UserDefaults.standard.set(bookmarkData, forKey: "bookmark_\(location.path)")
                 }
 
+                // Check if the item already exists
+                if items.contains(where: { $0.url == location }) {
+                    print("Item already exists: \(location)")
+                    continue
+                }
+                
                 let newItem = Item(timestamp: Date(), url: location)
                 modelContext.insert(newItem)
             }
