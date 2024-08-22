@@ -10,6 +10,9 @@ import SwiftUI
 
 @main
 struct PrrreciousApp: App {
+
+    @AppStorage("showMenubar") private var showMenubar = false
+
     init() {
         try? loadBookmarks()
     }
@@ -42,10 +45,10 @@ struct PrrreciousApp: App {
             ContentView()
                 .modelContainer(sharedModelContainer)
         }
-//        MenuBarExtra("Prrrecious", systemImage: "diamond.circle") {
-//            MenubarContentView()
-//                .modelContainer(sharedModelContainer)
-//        }
-//        .menuBarExtraStyle(.window)
+        MenuBarExtra("Prrrecious", systemImage: "diamond.circle", isInserted: $showMenubar) {
+            MenubarContentView()
+                .modelContainer(sharedModelContainer)
+        }
+        .menuBarExtraStyle(.window)
     }
 }

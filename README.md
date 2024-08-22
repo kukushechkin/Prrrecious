@@ -2,7 +2,7 @@
 
 - [ ] cloud view
 - [X] menu bar
-- [ ] show menu bar on a UserDefault value
+- [X] show menu bar on a UserDefault value
 - [X] preserve files access across restarts (secure bookmark)
 - [X] icon
 - [ ] menubar icon
@@ -14,7 +14,7 @@
 - [X] thumbnail
 - [X] lazy load thumbnail
 - [X] show counts toggle
-- [ ] whenever adding new items, check they already exist, both path and hash
+- [X] whenever adding new items, check they already exist by path
 
 # Bugs
 
