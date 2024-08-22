@@ -90,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				B13AEF662C694DFF00DA7A0A /* README.md */,
-				B13AEF382C6941D400DA7A0A /* here */,
+				B13AEF382C6941D400DA7A0A /* Prrrecious */,
 				B13AEF4C2C6941D600DA7A0A /* PrrreciousTests */,
 				B13AEF562C6941D600DA7A0A /* PrrreciousUITests */,
 				B13AEF372C6941D400DA7A0A /* Products */,
@@ -107,7 +107,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B13AEF382C6941D400DA7A0A /* here */ = {
+		B13AEF382C6941D400DA7A0A /* Prrrecious */ = {
 			isa = PBXGroup;
 			children = (
 				B13AEF392C6941D400DA7A0A /* PrrreciousApp.swift */,
@@ -122,7 +122,7 @@
 				B13AEF412C6941D500DA7A0A /* Prrrecious.entitlements */,
 				B13AEF422C6941D500DA7A0A /* Preview Content */,
 			);
-			path = here;
+			path = Prrrecious;
 			sourceTree = "<group>";
 		};
 		B13AEF422C6941D500DA7A0A /* Preview Content */ = {
@@ -444,14 +444,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = here/Prrrecious.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Prrrecious/Prrrecious.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"here/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Prrrecious/Preview Content\"";
 				DEVELOPMENT_TEAM = AC5986BBE6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Prrrecious;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -470,10 +472,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kukushechkin.Prrrecious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -482,14 +484,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = here/Prrrecious.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Prrrecious/Prrrecious.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"here/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Prrrecious/Preview Content\"";
 				DEVELOPMENT_TEAM = AC5986BBE6;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Prrrecious;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -508,10 +512,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.kukushechkin.Prrrecious;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

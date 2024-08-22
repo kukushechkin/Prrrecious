@@ -1,8 +1,10 @@
 # TODO
 
+- [ ] cloud view
 - [X] menu bar
+- [ ] show menu bar on a UserDefault value
 - [X] preserve files access across restarts (secure bookmark)
-- [ ] icon
+- [X] icon
 - [ ] menubar icon
 - [X] bulk add files
 - [X] collection view
@@ -10,11 +12,9 @@
 - [ ] filters by file type
 - [ ] groups
 - [X] thumbnail
-- [ ] ~~recreate the thumbnail if the file has changed~~
 - [X] lazy load thumbnail
 - [X] show counts toggle
-- [ ] hide main app when running
-- [ ] settings to hide menubar when running
+- [ ] whenever adding new items, check they already exist, both path and hash
 
 # Bugs
 
