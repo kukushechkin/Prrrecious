@@ -20,7 +20,16 @@ struct ContentView: View {
                 ForEach(items) { item in
                     VStack {
                         ItemView(item: item, showCounter: showCounters)
+                        .contextMenu {
+                            Button(action: {
+                                deleteItem(item: item)
+                            }) {
+                                Text("Delete")
+                                Image(systemName: "trash")
+                            }
+                        }
                     }
+
                 }
                 .onDelete(perform: deleteItems)
             }
@@ -77,6 +86,12 @@ struct ContentView: View {
             for index in offsets {
                 modelContext.delete(items[index])
             }
+        }
+    }
+
+    private func deleteItem(item: Item) {
+        withAnimation {
+            modelContext.delete(item)
         }
     }
 

@@ -1,7 +1,8 @@
 # TODO
 
-- [ ] cloud view
 - [/] add IAP for more than 5 files
+- [X] remove items
+- [ ] clouds view, bubbles
 - [X] menu bar
 - [X] show menu bar on a UserDefault value
 - [X] preserve files access across restarts (secure bookmark)
