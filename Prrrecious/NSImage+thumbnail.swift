@@ -1,6 +1,6 @@
 //
 //  NSImage+thumbnail.swift
-//  here
+//  Prrrecious
 //
 // Copied from https://github.com/insidegui/WWDC/blob/master/WWDC/NSImage%2BThumbnail.swift
 // and fixed the aspect ratio issue

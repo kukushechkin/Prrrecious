@@ -1,6 +1,6 @@
 //
 //  PrrreciousApp.swift
-//  here
+//  Prrrecious
 //
 //  Created by Vladimir Kukushkin on 11.8.2024.
 //

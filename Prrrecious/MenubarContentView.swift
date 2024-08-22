@@ -1,6 +1,6 @@
 //
 //  MenubarContentView.swift
-//  here
+//  Prrrecious
 //
 //  Created by Vladimir Kukushkin on 18.8.2024.
 //
