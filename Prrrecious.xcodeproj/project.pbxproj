@@ -61,6 +61,8 @@
 		B160D06B2C714D7A00DCA513 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		B160D06D2C714FDE00DCA513 /* MenubarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarItemView.swift; sourceTree = "<group>"; };
 		B1D189712C77D1980017DE62 /* IAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAP.swift; sourceTree = "<group>"; };
+		B1D189732C791FB70017DE62 /* SyncedProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SyncedProducts.storekit; sourceTree = "<group>"; };
+		B1D189742C7920A30017DE62 /* LocalProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalProducts.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +114,9 @@
 		B13AEF382C6941D400DA7A0A /* Prrrecious */ = {
 			isa = PBXGroup;
 			children = (
+				B1D189752C7920A70017DE62 /* IAP */,
 				B1D1896C2C77C66C0017DE62 /* Item */,
 				B1D1896B2C77C65E0017DE62 /* Menubar */,
-				B1D189712C77D1980017DE62 /* IAP.swift */,
 				B13AEF392C6941D400DA7A0A /* PrrreciousApp.swift */,
 				B13AEF3B2C6941D400DA7A0A /* ContentView.swift */,
 				B160D0692C714D3900DCA513 /* OpenFile.swift */,
@@ -167,6 +169,16 @@
 				B160D0652C71410600DCA513 /* NSImage+thumbnail.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		B1D189752C7920A70017DE62 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				B1D189712C77D1980017DE62 /* IAP.swift */,
+				B1D189732C791FB70017DE62 /* SyncedProducts.storekit */,
+				B1D189742C7920A30017DE62 /* LocalProducts.storekit */,
+			);
+			path = IAP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

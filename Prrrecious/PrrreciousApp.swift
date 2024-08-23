@@ -14,6 +14,7 @@ struct PrrreciousApp: App {
     @AppStorage("showMenubar") private var showMenubar = false
 
     init() {
+        IAPManager.shared.fetchProduct(productID: manyFilesProductID)
         try? loadBookmarks()
     }
 
