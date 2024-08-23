@@ -72,7 +72,7 @@ struct ContentView: View {
 
                 // Check if free limit of files reached
                 if items.count >= maxFreeFiles && !IAPManager.shared.isPurchased(productID: manyFilesProductID) {
-                    IAPManager.shared.purchaseProduct()
+                    IAPManager.shared.purchase(productID: manyFilesProductID)
                 }
                 else {
                     let newItem = Item(timestamp: Date(), url: location)
