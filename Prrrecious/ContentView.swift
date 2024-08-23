@@ -71,12 +71,14 @@ struct ContentView: View {
                 }
 
                 // Check if free limit of files reached
-                if items.count >= maxFreeFiles && !IAPManager.shared.isPurchased(productID: manyFilesProductID) {
-                    IAPManager.shared.purchaseProduct()
-                }
-
-                let newItem = Item(timestamp: Date(), url: location)
-                modelContext.insert(newItem)
+//                TODO: enable IAP
+//                if items.count >= maxFreeFiles && !IAPManager.shared.isPurchased(productID: manyFilesProductID) {
+//                    IAPManager.shared.purchaseProduct()
+//                }
+//                else {
+                    let newItem = Item(timestamp: Date(), url: location)
+                    modelContext.insert(newItem)
+//                }
             }
         }
     }

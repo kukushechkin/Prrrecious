@@ -17,6 +17,7 @@
 - [X] lazy load thumbnail
 - [X] show counts toggle
 - [X] whenever adding new items, check they already exist by path
+- [ ] figure out why tests fail in Xcode Cloud with hardened runtime enabled
 
 # Bugs
 
