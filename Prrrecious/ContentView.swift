@@ -44,11 +44,25 @@ struct ContentView: View {
                     Button(action: addItems) {
                         Label("Add Items", systemImage: "plus")
                     }
+                    .help("Add files")
                 }
                 ToolbarItem {
                     Button(action: toggleShowCounters) {
                         Label("Toggle Counters", systemImage: showCounters ? "eye.slash" : "eye")
                     }
+                    .help("Toggle counters")
+                }
+                ToolbarItem {
+                    Button(action: restorePurchases) {
+                        ZStack {
+                            Image(systemName: "arrow.triangle.2.circlepath")
+                            Image(systemName: "cart")
+                                .resizable() // Make the cart resizable
+                                .frame(width: 8, height: 8) // Set the desired size
+                                .offset(.init(width: -1, height: 0))
+                        }
+                    }
+                    .help("Restore purchases")
                 }
             }
         }
@@ -100,6 +114,10 @@ struct ContentView: View {
         withAnimation {
             showCounters.toggle()
         }
+    }
+
+    private func restorePurchases() {
+        IAPManager.shared.restorePurchases()
     }
 }
 
