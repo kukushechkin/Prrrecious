@@ -21,6 +21,9 @@
 		B160D06A2C714D3900DCA513 /* OpenFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160D0692C714D3900DCA513 /* OpenFile.swift */; };
 		B160D06C2C714D7A00DCA513 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160D06B2C714D7A00DCA513 /* ItemView.swift */; };
 		B160D06E2C714FDE00DCA513 /* MenubarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B160D06D2C714FDE00DCA513 /* MenubarItemView.swift */; };
+		B18B2D012C807AA900D14E53 /* TODO.md in Resources */ = {isa = PBXBuildFile; fileRef = B18B2D002C807AA900D14E53 /* TODO.md */; };
+		B18B2D042C807B3300D14E53 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B18B2D022C807B3300D14E53 /* LICENSE */; };
+		B18B2D052C807B3300D14E53 /* PrivacyPolicy.txt in Resources */ = {isa = PBXBuildFile; fileRef = B18B2D032C807B3300D14E53 /* PrivacyPolicy.txt */; };
 		B1D189722C77D1980017DE62 /* IAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D189712C77D1980017DE62 /* IAP.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +63,9 @@
 		B160D0692C714D3900DCA513 /* OpenFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenFile.swift; sourceTree = "<group>"; };
 		B160D06B2C714D7A00DCA513 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		B160D06D2C714FDE00DCA513 /* MenubarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenubarItemView.swift; sourceTree = "<group>"; };
+		B18B2D002C807AA900D14E53 /* TODO.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = TODO.md; sourceTree = "<group>"; };
+		B18B2D022C807B3300D14E53 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B18B2D032C807B3300D14E53 /* PrivacyPolicy.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PrivacyPolicy.txt; sourceTree = "<group>"; };
 		B1D189712C77D1980017DE62 /* IAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAP.swift; sourceTree = "<group>"; };
 		B1D189732C791FB70017DE62 /* SyncedProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = SyncedProducts.storekit; sourceTree = "<group>"; };
 		B1D189742C7920A30017DE62 /* LocalProducts.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = LocalProducts.storekit; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 		B13AEF2D2C6941D400DA7A0A = {
 			isa = PBXGroup;
 			children = (
+				B18B2D022C807B3300D14E53 /* LICENSE */,
+				B18B2D032C807B3300D14E53 /* PrivacyPolicy.txt */,
+				B18B2D002C807AA900D14E53 /* TODO.md */,
 				B13AEF662C694DFF00DA7A0A /* README.md */,
 				B13AEF382C6941D400DA7A0A /* Prrrecious */,
 				B13AEF4C2C6941D600DA7A0A /* PrrreciousTests */,
@@ -285,9 +294,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18B2D012C807AA900D14E53 /* TODO.md in Resources */,
 				B13AEF672C694DFF00DA7A0A /* README.md in Resources */,
 				B13AEF442C6941D500DA7A0A /* Preview Assets.xcassets in Resources */,
+				B18B2D052C807B3300D14E53 /* PrivacyPolicy.txt in Resources */,
 				B13AEF402C6941D500DA7A0A /* Assets.xcassets in Resources */,
+				B18B2D042C807B3300D14E53 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
